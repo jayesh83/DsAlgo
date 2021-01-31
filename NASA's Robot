@@ -1,0 +1,48 @@
+/*
+Author: Jayesh Suthar
+Email:  jayeshatworplace@gmail.com
+
+Problem: https://a2oj.com/p?ID=7
+
+Naive Solution I've tried.
+/*
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main{
+    public static void main(String args[]){
+    
+    Scanner sc = new Scanner(System.in);
+    int tests = sc.nextInt();
+    sc.nextLine();
+
+    for (int i=1; i<=tests; i++){
+        long x = 0, y=0, un=0;
+        long minX=0, minY=0, maxX=0, maxY=0;
+        String input = sc.nextLine();
+        for (int j=0; j<input.length(); j++){
+            switch(input.charAt(j)){
+                case 'R':
+                    x++; break;
+                case 'L':
+                    x--; break;
+                case 'U':
+                    y++; break;
+                case 'D':
+                    y--; break;
+                default:
+                    un++; break;
+            }
+        }
+        minX = x - un;
+        minY = y - un;
+        maxX = x + un;
+        maxY = y + un;
+        System.out.println(minX+" "+minY+" "+maxX+" "+maxY);
+    }
+
+    }
+}
